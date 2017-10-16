@@ -8,12 +8,14 @@ require 'pry-byebug'
 Tag.delete_all()
 Merchant.delete_all()
 Account.delete_all()
+Transaction.delete_all()
 
 account1= Account.new({
     'name' => 'Terry-test',
     'budget' => 400
     })
 account1.save()
+
 
 tag1= Tag.new({
     'name' => 'food'
@@ -77,6 +79,15 @@ merchant7.save()
 merchant8.save()
 merchant9.save()
 merchant10.save()
+
+transaction1= Transaction.new({
+    'cost' => 24,
+    'merchant' => merchant1.id,
+    'item' => 'Cake and biscuits',
+    'tag' => tag1.id
+    })
+transaction1.save()
+
 
 binding.pry()
 nil

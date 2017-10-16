@@ -24,8 +24,8 @@ CREATE TABLE accounts(
 
 CREATE TABLE transactions(
     id SERIAL4 PRIMARY KEY,
-    spent INT4,
     item VARCHAR(255),
+    cost INT4,
     merchant INT4 REFERENCES merchants(id),
     tag INT4 REFERENCES tags(id),
     date DATE
