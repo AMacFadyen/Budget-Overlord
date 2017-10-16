@@ -36,5 +36,20 @@ class Transaction
         SqlRunner.run(sql, "delete_all_transactions", values)
     end
 
+    def self.all()
+        sql = "SELECT * FROM transactions;"
+        values = []
+        transactions = SqlRunner.run(sql, "all_transactions", values)
+        return transactions.map{|transaction|Transaction.new(transaction)}
+    end
+
+    def self.find(id)
+        sql = "SELECT * FROM transactions WHERE id = $1;"
+        values = [id]
+        transaction = SqlRunner.run(sql, "find_single_transaction",values).first()
+        return Transaction.new(transaction)
+    end
+
+    
 
 end

@@ -5,10 +5,11 @@ require_relative('../models/transaction.rb')
 
 require 'pry-byebug'
 
+Transaction.delete_all()
 Tag.delete_all()
 Merchant.delete_all()
 Account.delete_all()
-Transaction.delete_all()
+
 
 account1= Account.new({
     'name' => 'Terry-test',
@@ -68,6 +69,9 @@ merchant9= Merchant.new({
 merchant10= Merchant.new({
     'name' => 'Government'
 })
+merchant11= Merchant.new({
+    'name' => 'Scottish-Power'
+})
 
 merchant1.save()
 merchant2.save()
@@ -79,6 +83,7 @@ merchant7.save()
 merchant8.save()
 merchant9.save()
 merchant10.save()
+merchant11.save()
 
 transaction1= Transaction.new({
     'cost' => 24,
@@ -87,6 +92,30 @@ transaction1= Transaction.new({
     'tag' => tag1.id
     })
 transaction1.save()
+
+transaction2= Transaction.new({
+    'cost' => 45,
+    'merchant' => merchant5.id,
+    'item' => 'Video games',
+    'tag' => tag4.id
+    })
+transaction2.save()
+
+transaction3= Transaction.new({
+    'cost' => 34,
+    'merchant' => merchant6.id,
+    'item' => 'New jumper',
+    'tag' => tag2.id
+    })
+transaction3.save()
+
+transaction4= Transaction.new({
+    'cost' => 156,
+    'merchant' => merchant9.id,
+    'item' => 'GameSystem',
+    'tag' => tag4.id
+    })
+transaction4.save()
 
 
 binding.pry()
