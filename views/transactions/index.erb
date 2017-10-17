@@ -1,5 +1,5 @@
 <h1>Overlord has registered the following transactions:</h1>
-<hr/>
+
 <table>
     <tr>
         <th>Purchase name</th>
@@ -12,8 +12,8 @@
     <tr>
         <td><%= transaction.item %></td>
         <td><%= transaction.cost %></td>
-        <td><%= transaction.merchant.name%></td>
-        <td><%= transaction.tag.name%></td>
+        <td><%= transaction.merchant %></td>
+        <td><%= transaction.tag%></td>
         <td><%= transaction.date%></td>
     </tr>
     <% end %>

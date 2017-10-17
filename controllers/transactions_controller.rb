@@ -8,5 +8,7 @@ require_relative('../models/merchant.rb')
 
 get '/transactions' do
     @transactions = Transaction.all()
-    erb ( :"transactions/index")
+    @merchants = Merchant.all()
+    @tags = Tag.all()
+    erb ( :"transactions/index" )
 end
