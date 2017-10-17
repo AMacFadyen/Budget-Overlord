@@ -5,7 +5,7 @@ require_relative('./tag.rb')
 
 class Transaction
 
-    attr_accessor :cost, :merchant, :item, :tag, :date
+    attr_accessor :cost, :merchant, :item, :tag, :date, :total_costs
     attr_reader :id
 
     def initialize(options)
@@ -15,6 +15,7 @@ class Transaction
         @item = options['item']
         @tag = options['tag']
         @date = options['date']
+        @total_costs = Transaction.total_spent()
     end
 
     def save()
@@ -50,6 +51,23 @@ class Transaction
         return Transaction.new(transaction)
     end
 
-    
+    def self.by_tag(tag)
+        sql = "SELECT * FROM transactions WHERE tag = $1"
+        values= [tag]
+        transactions = SqlRunner.run(sql, "return_all_specific_tags", values)
+        return transactions.map{|transaction|Transaction.new(transaction)}
+    end
 
+    def self.total_spent()
+        sql = "SELECT SUM(cost) FROM transactions;"
+        values = []
+        @total_costs =+ SqlRunner.run(sql, "total_costs", values)[0].values().first().to_i
+        return @total_costs
+    end
+
+    def self.budget_check()
+        if @total_costs >= account.budget()
+            return "That exceeds your budget! Purchase denied!"
+        end
+    end
 end

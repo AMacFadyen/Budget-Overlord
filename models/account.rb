@@ -1,8 +1,9 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./transaction.rb')
 
 class Account
 
-    attr_accessor :name, :budget
+    attr_accessor :name, :budget, :total_spent
     attr_reader :id
 
     def initialize(options)

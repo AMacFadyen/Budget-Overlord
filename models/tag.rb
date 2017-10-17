@@ -30,4 +30,6 @@ class Tag
         return tags.map{|tag|Tag.new(tag)}
     end
 
+    
+
 end

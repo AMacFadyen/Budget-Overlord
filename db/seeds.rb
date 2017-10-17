@@ -112,7 +112,7 @@ transaction3.save()
 transaction4= Transaction.new({
     'cost' => 156,
     'merchant' => merchant9.id,
-    'item' => 'GameSystem',
+    'item' => 'Sound System',
     'tag' => tag4.id
     })
 transaction4.save()
