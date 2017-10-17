@@ -20,19 +20,19 @@ account1.save()
 
 
 tag1= Tag.new({
-    'name' => 'food'
+    'name' => 'Food'
     })
 tag2= Tag.new({
-    'name' => 'clothes'
+    'name' => 'Clothes'
     })
 tag3= Tag.new({
-    'name' => 'bills'
+    'name' => 'Bills'
     })
 tag4= Tag.new({
-    'name' => 'gifts'
+    'name' => 'Gifts'
     })
 tag5= Tag.new({
-    'name' => 'misc'
+    'name' => 'Misc'
     })
 tag1.save()
 tag2.save()
@@ -122,7 +122,7 @@ transaction4= Transaction.new({
     })
 transaction4.save()
 
-@total_costs = Transaction.total_spent() 
+@total_costs = Transaction.total_spent()
 
 
 binding.pry()

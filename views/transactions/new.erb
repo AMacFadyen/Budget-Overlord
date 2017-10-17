@@ -1,0 +1,24 @@
+<h1>New Transactions Details</h1>
+
+<form action="/transactions" method="post">
+    <label for="Item">Purchased Item</label>
+    <input type="text" name="item" value="Item">
+
+    <label for="Cost">Cost</label>
+    <input type="number" name="cost" value="Cost">
+
+    <label for="Merchant">Merchant</label>
+    <input type="text" name="merchant" value="Merchant">
+
+    <label for="Tag">Tag</label>
+    <select name="tag" id="Tag">
+        <% for tag in @tags %>
+        <option value="tag.id"><%=tag.name%></option>\
+        <% end %>
+    </select>
+
+    <label for="Date">Date</label>
+    <input type="text" name="date" value="Date">
+
+    <input type="submit" value="Save transaction" id="save-trans_butt">
+</form>

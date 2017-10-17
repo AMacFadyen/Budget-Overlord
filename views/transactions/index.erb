@@ -12,9 +12,11 @@
     <tr>
         <td><%= transaction.item %></td>
         <td><%= transaction.cost %></td>
-        <td><%= transaction.merchant %></td>
-        <td><%= transaction.tag%></td>
+        <td><%= transaction.merchant.name %></td>
+        <td><%= transaction.tag.name%></td>
         <td><%= transaction.date%></td>
     </tr>
     <% end %>
 </table>
+
+<h2>Current monthly spending = £<%= Transaction.total_spent() %></h2>

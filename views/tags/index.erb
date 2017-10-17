@@ -1,0 +1,12 @@
+<h1>Registered Tags</h1>
+
+<table>
+    <tr>
+        <th>Tag Name</th>
+    </tr>
+    <% for tag in @tags %>
+    <tr>
+        <td><%=tag.name%></td>
+    </tr>
+    <% end %>
+</table>

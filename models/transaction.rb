@@ -5,7 +5,7 @@ require_relative('./tag.rb')
 
 class Transaction
 
-    attr_accessor :cost, :merchant, :item, :tag, :date, :total_costs
+    attr_accessor :cost, :item, :date, :total_costs
     attr_reader :id
 
     def initialize(options)
@@ -16,7 +16,7 @@ class Transaction
         @item = options['item']
         @tag = options['tag']
         @date = options['date']
-        
+
     end
 
     def save()
@@ -30,6 +30,20 @@ class Transaction
         sql = "DELETE * FROM transactions WHERE id = $1;"
         values = [@id]
         SqlRunner.run(sql, "delete_transaction", values)
+    end
+
+    def merchant()
+        sql = "SELECT * FROM merchants WHERE id = $1;"
+        values = [@merchant]
+        merchants = SqlRunner.run(sql, "find_merchant", values)
+        return Merchant.new(merchants.first())
+    end
+
+    def tag()
+        sql = "SELECT * FROM tags WHERE id = $1;"
+        values = [@tag]
+        tags = SqlRunner.run(sql, "find_tag", values)
+        return Tag.new(tags.first())
     end
 
     def self.delete_all()
