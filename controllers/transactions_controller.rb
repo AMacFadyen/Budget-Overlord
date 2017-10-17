@@ -13,10 +13,10 @@ get '/transactions' do
     erb ( :"transactions/index" )
 end
 
-get '/transactions/tag'
+get '/transactions/tag' do
     @transactions = Transaction.all()
-    @tag = Tag.all()
-    erb ( :"transactions/tag")
+    @tags = Tag.all()
+    erb ( :"transactions/tag" )
 end
 
 get '/transactions/new' do

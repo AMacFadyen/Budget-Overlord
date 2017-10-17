@@ -1,0 +1,14 @@
+<h1>Sort spending by Tag</h1>
+
+<table>
+    <tr>
+        <th>Tag Name</th>
+        <th>Total Spent</th>
+    </tr>
+    <% for tag in @tags %>
+    <tr>
+        <td><%=tag.name%></td>
+        <td><%=Transaction.total_cost_by_tag(tag.id)%></td>
+    </tr>
+    <% end %>
+</table>
