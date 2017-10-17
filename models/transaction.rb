@@ -10,12 +10,13 @@ class Transaction
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
+        # @account = options['account']
         @cost = options['cost']
         @merchant = options['merchant']
         @item = options['item']
         @tag = options['tag']
         @date = options['date']
-        @total_costs = Transaction.total_spent()
+        
     end
 
     def save()
@@ -65,8 +66,8 @@ class Transaction
         return @total_costs
     end
 
-    def self.budget_check()
-        if @total_costs >= account.budget()
+    def budget_check()
+        if @total_costs + @cost > @account.budget()
             return "That exceeds your budget! Purchase denied!"
         end
     end

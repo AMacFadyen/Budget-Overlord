@@ -11,6 +11,7 @@ Merchant.delete_all()
 Account.delete_all()
 
 
+
 account1= Account.new({
     'name' => 'Terry-test',
     'budget' => 400
@@ -89,7 +90,8 @@ transaction1= Transaction.new({
     'cost' => 24,
     'merchant' => merchant1.id,
     'item' => 'Cake and biscuits',
-    'tag' => tag1.id
+    'tag' => tag1.id,
+    'date' => "01.05.2017"
     })
 transaction1.save()
 
@@ -97,7 +99,8 @@ transaction2= Transaction.new({
     'cost' => 45,
     'merchant' => merchant5.id,
     'item' => 'Video games',
-    'tag' => tag4.id
+    'tag' => tag4.id,
+    'date' => "03.05.2017"
     })
 transaction2.save()
 
@@ -105,7 +108,8 @@ transaction3= Transaction.new({
     'cost' => 34,
     'merchant' => merchant6.id,
     'item' => 'New jumper',
-    'tag' => tag2.id
+    'tag' => tag2.id,
+    'date' => "08.05.2017"
     })
 transaction3.save()
 
@@ -113,9 +117,12 @@ transaction4= Transaction.new({
     'cost' => 156,
     'merchant' => merchant9.id,
     'item' => 'Sound System',
-    'tag' => tag4.id
+    'tag' => tag4.id,
+    'date' => "13.05.2017"
     })
 transaction4.save()
+
+@total_costs = Transaction.total_spent() 
 
 
 binding.pry()
