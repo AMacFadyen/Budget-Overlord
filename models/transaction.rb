@@ -66,11 +66,11 @@ class Transaction
         return Transaction.new(transaction)
     end
 
-    def self.by_tag(tag)
-        sql = "SELECT * FROM transactions WHERE tag = $1"
+    def self.total_cost_by_tag(tag)
+        sql = "SELECT SUM(cost) FROM transactions WHERE tag = $1"
         values= [tag]
-        transactions = SqlRunner.run(sql, "return_all_specific_tags", values)
-        return transactions.map{|transaction|Transaction.new(transaction)}
+        tag_cost_total = SqlRunner.run(sql, "total_cost_by_tag", values)
+        return tag_cost_total.first()['sum'].to_i
     end
 
     def self.total_spent()
