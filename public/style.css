@@ -10,15 +10,19 @@ text-align: center;
 font-family: Georgia;
 color: black;
 border-radius: 100px;
+padding: 0.1px;
 }
 
 h1 {
 font-family: 'Bungee Outline', serif;
+color:darkorange;
+
 }
 
 h2{
-font-family: Arial;
+font-family: Georgia;
 color: darkorange;
+font-weight: bold;
 
 }
 
@@ -28,15 +32,26 @@ ul{
 
 a{
 color: darkorange;
+background-color:black;
 }
 
 
-table, td, th{
+table, td, th, p{
     margin:auto;
     border: 1px solid darkorange;
     text-align:center;
     padding: 10px;
     background-color: black;
+}
+
+.newtransac{
+    width: 50%;
+}
+
+p{
+    margin: 10px 400px;
+    border: 5px solid darkorange;
+
 }
 
 td{
