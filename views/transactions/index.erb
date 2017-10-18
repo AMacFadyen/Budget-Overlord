@@ -6,7 +6,7 @@
         <th>Cost</th>
         <th>Merchant</th>
         <th>Tag</th>
-        <th>Date</th>
+        <th class="date_cell">Date</th>
     </tr>
     <% for transaction in @transactions %>
     <tr>
@@ -14,7 +14,7 @@
         <td><%= transaction.cost %></td>
         <td><%= transaction.merchant.name %></td>
         <td><%= transaction.tag.name%></td>
-        <td><%= transaction.date%></td>
+        <td class="date_cell"><%= transaction.date%></td>
     </tr>
     <% end %>
 </table>

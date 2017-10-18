@@ -16,7 +16,10 @@ padding: 0.1px;
 h1 {
 font-family: 'Bungee Outline', serif;
 color:darkorange;
+}
 
+.date_cell{
+    width:260px;
 }
 
 h2{
@@ -35,21 +38,31 @@ color: darkorange;
 background-color:black;
 }
 
+table{
+    margin: 10px auto;
+}
 
-table, td, th, p{
-    margin:auto;
+td, th{
+    margin: 10px auto;
     border: 1px solid darkorange;
     text-align:center;
     padding: 10px;
     background-color: black;
 }
 
+
 .newtransac{
-    width: 50%;
+    margin:10px auto;
+    width: 35%;
 }
 
 p{
-    margin: 10px 400px;
+    border: 1px solid darkorange;
+    text-align:center;
+    padding: 10px;
+    background:black;
+    margin: 10px auto;
+    width: 40%;
     border: 5px solid darkorange;
 
 }
