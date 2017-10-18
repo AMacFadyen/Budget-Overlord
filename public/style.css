@@ -1,4 +1,44 @@
 body{
-background-color: gainsboro;}
+background: black url('/images/background.jpg');
+color: orange;
+text-align: center;
+}
 
-h1 {}
+nav {
+background-color: black;
+text-align: center;
+font-family: Georgia;
+color: black;
+border-radius: 100px;
+}
+
+h1 {
+font-family: 'Bungee Outline', serif;
+}
+
+h2{
+font-family: Arial;
+color: darkorange;
+
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+color: darkorange;
+}
+
+
+table, td, th{
+    margin:auto;
+    border: 1px solid darkorange;
+    text-align:center;
+    padding: 10px;
+    background-color: black;
+}
+
+td{
+    background-color:#6B0504;
+}
